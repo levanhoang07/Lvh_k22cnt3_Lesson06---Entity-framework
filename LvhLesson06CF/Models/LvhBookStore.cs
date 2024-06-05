@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Web;   
 
 namespace LvhLesson06CF.Models
 {
     public class LvhBookStore : DbContext
     {
-        public LvhBookStore() : base("TvcBookStoreConnectionString") { }
+        public LvhBookStore() : base() { }
 
         public DbSet<LvhCategory> LvhCategories { get; set; }
         public DbSet<LvhBook> LvhBooks { get; set; }

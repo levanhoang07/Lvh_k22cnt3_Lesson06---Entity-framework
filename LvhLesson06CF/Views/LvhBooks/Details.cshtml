@@ -1,0 +1,74 @@
+﻿@model LvhLesson06CF.Models.LvhBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LvhBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhBookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhBookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhPulisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhPulisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhCateghory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhCateghory)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LvhID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

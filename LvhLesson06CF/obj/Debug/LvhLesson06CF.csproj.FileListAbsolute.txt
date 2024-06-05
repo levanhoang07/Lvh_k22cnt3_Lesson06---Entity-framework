@@ -1,4 +1,3 @@
-C:\HoangNET\LvhLesson06CF\LvhLesson06CF\obj\Debug\LvhLesson06CF.csproj.AssemblyReference.cache
 C:\HoangNET\LvhLesson06CF\LvhLesson06CF\obj\Debug\LvhLesson06CF.csproj.CoreCompileInputs.cache
 C:\HoangNET\LvhLesson06CF\LvhLesson06CF\bin\LvhLesson06CF.dll.config
 C:\HoangNET\LvhLesson06CF\LvhLesson06CF\bin\LvhLesson06CF.dll

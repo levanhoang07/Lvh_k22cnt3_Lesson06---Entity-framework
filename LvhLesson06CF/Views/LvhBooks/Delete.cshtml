@@ -1,0 +1,80 @@
+﻿@model LvhLesson06CF.Models.LvhBook
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LvhBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhBookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhBookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhPulisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhPulisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LvhCateghory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LvhCateghory)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

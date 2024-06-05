@@ -1,19 +1,23 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using LvhLesson06CF.Models;
 
 namespace LvhLesson06CF.Controllers
 {
-    public class LvhBooksController : Controller // Changed the class name
+    public class LvhBooksController : Controller
     {
         private LvhBookStore db = new LvhBookStore();
 
         // GET: LvhBooks
         public ActionResult Index()
         {
-            return View(db.LvhBooks.ToList()); // Updated to use LvhBooks
+            return View(db.LvhBooks.ToList());
         }
 
         // GET: LvhBooks/Details/5
@@ -23,7 +27,7 @@ namespace LvhLesson06CF.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LvhBook lvhBook = db.LvhBooks.Find(id); // Updated to use LvhBooks
+            LvhBook lvhBook = db.LvhBooks.Find(id);
             if (lvhBook == null)
             {
                 return HttpNotFound();
@@ -38,13 +42,15 @@ namespace LvhLesson06CF.Controllers
         }
 
         // POST: LvhBooks/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Author,ISBN")] LvhBook lvhBook) // Updated to use LvhBook
+        public ActionResult Create([Bind(Include = "LvhID,LvhBookId,LvhTitle,LvhAuthor,LvhYear,LvhPulisher,LvhPicture,LvhCateghory")] LvhBook lvhBook)
         {
             if (ModelState.IsValid)
             {
-                db.LvhBooks.Add(lvhBook); // Updated to use LvhBooks
+                db.LvhBooks.Add(lvhBook);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,7 +65,7 @@ namespace LvhLesson06CF.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LvhBook lvhBook = db.LvhBooks.Find(id); // Updated to use LvhBooks
+            LvhBook lvhBook = db.LvhBooks.Find(id);
             if (lvhBook == null)
             {
                 return HttpNotFound();
@@ -68,13 +74,15 @@ namespace LvhLesson06CF.Controllers
         }
 
         // POST: LvhBooks/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Author,ISBN")] LvhBook lvhBook) // Updated to use LvhBook
+        public ActionResult Edit([Bind(Include = "LvhID,LvhBookId,LvhTitle,LvhAuthor,LvhYear,LvhPulisher,LvhPicture,LvhCateghory")] LvhBook lvhBook)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(lvhBook).State = EntityState.Modified; // Updated to use LvhBook
+                db.Entry(lvhBook).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -88,7 +96,7 @@ namespace LvhLesson06CF.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LvhBook lvhBook = db.LvhBooks.Find(id); // Updated to use LvhBooks
+            LvhBook lvhBook = db.LvhBooks.Find(id);
             if (lvhBook == null)
             {
                 return HttpNotFound();
@@ -101,8 +109,8 @@ namespace LvhLesson06CF.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            LvhBook lvhBook = db.LvhBooks.Find(id); // Updated to use LvhBooks
-            db.LvhBooks.Remove(lvhBook); // Updated to use LvhBooks
+            LvhBook lvhBook = db.LvhBooks.Find(id);
+            db.LvhBooks.Remove(lvhBook);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
